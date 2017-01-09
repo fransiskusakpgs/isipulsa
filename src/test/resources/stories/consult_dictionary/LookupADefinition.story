@@ -1,6 +1,6 @@
 Buying IDR 20.000 Pulsa for 082225506974
 Narrative:
-In order to keep a channel for communication through my phone
+In order to top up for my phone
 As student
 I want to top up my phone number pulsa
 

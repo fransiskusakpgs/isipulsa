@@ -1,4 +1,4 @@
-Search for definitions
-In order to understand a word that I don't know
-As a user
-I want to be able to look up the meaning of the word
+Buying A Pulsa
+In order to have an enough pulsa for my mobile phone
+As a Blibli.com user
+I want to be able to top up my mobile phone from www.blibli.com/pulsa

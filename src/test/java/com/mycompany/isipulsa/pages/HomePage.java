@@ -33,14 +33,25 @@ public class HomePage extends PageObject {
 //    @FindBy (xpath = "html/body//span[contains(text(),'Rp 20,000')]")
 //    private WebElementFacade buttonNominal;
 
+
+
+    //@FindBy (xpath = "html/body/ng-view/section[1]/div[1]/div[3]/form/div[3]/div/div/div/span[3]/select\n" )
+    //private WebElementFacade buttonUbahPembayaran;
+
+    //used last success
     @FindBy (xpath = "html/body/ng-view/section[1]/div[1]/div[3]/form/div[3]/div/img" )
     private WebElementFacade buttonUbahPembayaran;
 
-    @FindBy (xpath = "html/body/ng-view/section[1]/div[1]/div[3]/form/div[3]/div/div/div/span[3]/select")
+
+    @FindBy (xpath = "html/body/ng-view/section[1]/div[1]/div[3]/form/div[3]/div/div/div/span[3]/select/option[2]")
     private WebElementFacade buttonBayarLainnya;
 
-    @FindBy (xpath = "html/body//select[contains(@id,'paymentInternetBanking')]/option" ) //Pembayaran lainnya
-    private WebElementFacade buttonBayarKlikpay ;
+
+//    @FindBy (xpath = "html/body/ng-view/section[1]/div[1]/div[3]/form/div[3]/div/div/div/span[3]/select")
+//    private WebElementFacade buttonBayarLainnya;
+
+//    @FindBy (xpath = "html/body//select[contains(@id,'paymentInternetBanking')]/option" ) //Pembayaran lainnya
+//    private WebElementFacade buttonBayarKlikpay ;
 
     @FindBy (xpath = "html/body/ng-view/section[1]/div[1]/div[3]/form/div[6]/button" )
     private WebElementFacade buttonBayarSekarang;
@@ -57,13 +68,30 @@ public class HomePage extends PageObject {
     public void clickButtonUbahNominal() {buttonUbahNominal.click();}
 
     public void clickNominal(String nominal) {
-        WebElementFacade nom = find(By.xpath("html/body//span[contains(text(),'"+nominal+"')]"));
+        String xpath = "html/body//span[contains(text(),'"+nominal+"')]";
+        setWaitForElementTimeout(10000);
+        waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+        WebElementFacade nom = find(By.xpath(xpath));
         nom.click();
     }
 
     public void clickUbahPembayaran() {buttonUbahPembayaran.click();}
     public void clickPembayaranLainnya() {buttonBayarLainnya.click(); }
-    public void clickBCAKlikPay() {buttonBayarKlikpay.click();}
+
+    //public void clickBCAKlikPay() {buttonBayarKlikpay.click();}
+    public void clickBCAKlikPay() {
+        String xpath2 ="html/body/ng-view/section[1]/div[1]/div[3]/form/div[3]/div/div/div/span[3]/select/option[2]" ;
+        //String xpath2 = "html/body//select[contains(@id,'paymentInternetBanking')]/option" ;
+        setWaitForElementTimeout(10000);
+        waitFor(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath2)));
+        WebElementFacade BCAKlik = find(By.xpath(xpath2));
+        BCAKlik.click();
+    }
+
+
+
+
+
 //    public void clickBayarSekarang() {buttonBayarSekarang.click();}
 //    public void clickButtonFB() {buttonFB.click();}
 
